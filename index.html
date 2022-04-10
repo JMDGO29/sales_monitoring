@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Monitoring - Dashboard</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  </style>
+</head>
+
+<body class="hold-transition layout-top-nav dark-mode">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <span class="brand-text font-weight-light">SALES MONITORING</span>
+      </a>
+
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav ml-auto p-2">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active bg-lime">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="report.html" class="nav-link">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a href="products.html" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="accounts.html" class="nav-link">Accounts</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Settings</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#profile" role="button">Profile</a></li>
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#billing" role="button">Billing</a></li>
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#log-out" role="button">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Dashboard</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-success"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Accounts</span>
+                <span class="info-box-number">10</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-info"><i class="fas fa-database"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Stocks</span>
+                <span class="info-box-number">1,410</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-warning"><i class="fas fa-shopping-cart"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Orders</span>
+                <span class="info-box-number">2,756</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-danger"><i class="fas fa-user-check"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Visitos</span>
+                <span class="info-box-number">3, 681</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- PIE CHART -->
+          <div class="col-md-6">
+            <div class="card card-dark">
+              <div class="card-header">
+                <h3 class="card-title">Status</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas id="pieChart" style="min-height: 250px; height: 320px; max-height: 320px; max-width: 100%;"></canvas>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          
+          <!-- BAR CHART -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Sales</h3>
+                
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+                <a href="report2.html" class="float-right">View Report</a>
+              </div>
+              <div class="card-body">
+                <div class="d-flex">
+                  <p class="d-flex flex-column">
+                    <span class="text-bold text-lg">$18,230.00</span>
+                    <span>Sales Over Time</span>
+                  </p>
+                  <p class="ml-auto d-flex flex-column text-right">
+                    <span class="text-success">
+                      <i class="fas fa-arrow-up"></i> 33.1%
+                    </span>
+                    <span class="text-muted">Since last month</span>
+                  </p>
+                </div>
+                <!-- /.d-flex -->
+                <div class="chart">
+                  <canvas id="barChartGrade" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Order List</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0" style="height: 400px;">
+                <table class="table table-head-fixed table-bordered text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ORDER NO.</th>
+                      <th>STATUS</th>
+                      <th>OPERATORS</th>
+                      <th>LOCATION</th>
+                      <th>DISTANCE</th>
+                      <th>START DATE</th>
+                      <th>EST DELIVERY DUE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#122349</td>
+                      <td>
+                          <span class="badge badge-success">Moving</span>
+                      </td>
+                      <td>Oliver Trag</td>
+                      <td>London, UK</td>
+                      <td>485 km</td>
+                      <td>16:00, 12 NOV 2018</td>
+                      <td>08:00, 18 NOV 2018</td>
+                    </tr>
+
+                    <tr>
+                      <td>#122348</td>
+                      <td>
+                          <span class="badge badge-warning">Pending</span>
+                      </td>
+                      <td>Jacob Miller</td>
+                      <td>London, UK</td>
+                      <td>360 km</td>
+                      <td>11:00, 10 NOV 2018</td>
+                      <td>04:00, 14 NOV 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122347</td>
+                        <td>
+                            <span class="badge badge-danger">Cancelled</span>
+                        </td>
+                        <td>George Wilson</td>
+                        <td>London, UK</td>
+                        <td>340 km</td>
+                        <td>12:00, 22 NOV 2018</td>
+                        <td>06:00, 28 NOV 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122346</td>
+                        <td>
+                            <span class="badge badge-success">Moving</span>
+                        </td>
+                        <td>William Aung</td>
+                        <td>London, UK</td>
+                        <td>218 km</td>
+                        <td>15:00, 10 NOV 2018</td>
+                        <td>09:00, 14 NOV 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122345</td>
+                        <td>
+                            <span class="badge badge-warning">Pending</span>
+                        </td>
+                        <td>Harry Ryan</td>
+                        <td>London, UK</td>
+                        <td>280 km</td>
+                        <td>15:00, 11 NOV 2018</td>
+                        <td>09:00, 17 NOV 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122344</td>
+                        <td>
+                            <span class="badge badge-warning">Pending</span>
+                        </td>
+                        <td>Michael Jones</td>
+                        <td>London, UK</td>
+                        <td>218 km</td>
+                        <td>18:00, 12 OCT 2018</td>
+                        <td>06:00, 18 OCT 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122343</td>
+                        <td>
+                            <span class="badge badge-success">Moving</span>
+                        </td>
+                        <td>Timmy Davis</td>
+                        <td>London, UK</td>
+                        <td>218 km</td>
+                        <td>12:00, 10 OCT 2018</td>
+                        <td>08:00, 18 OCT 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122342</td>
+                        <td>
+                            <span class="badge badge-success">Moving</span>
+                        </td>
+                        <td>Oscar Phyo</td>
+                        <td>London, UK</td>
+                        <td>420 km</td>
+                        <td>15:30, 06 OCT 2018</td>
+                        <td>09:30, 16 OCT 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122341</td>
+                        <td>
+                            <span class="badge badge-success">Moving</span>
+                        </td>
+                        <td>Charlie Brown</td>
+                        <td>London, UK</td>
+                        <td>300 km</td>
+                        <td>11:00, 10 OCT 2018</td>
+                        <td>03:00, 14 OCT 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122340</td>
+                        <td>
+                            <span class="badge badge-danger">Cancelled</span>
+                        </td>
+                        <td>Wilson Cookies</td>
+                        <td>London, UK</td>
+                        <td>218 km</td>
+                        <td>17:30, 12 OCT 2018</td>
+                        <td>08:30, 22 OCT 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>#122339</td>
+                        <td>
+                            <span class="badge badge-success">Moving</span>
+                        </td>
+                        <td>Richard Clamon</td>
+                        <td>London, UK</td>
+                        <td>150 km</td>
+                        <td>15:00, 12 OCT 2018</td>
+                        <td>09:20, 26 OCT 2018</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+
+      <div class="modal fade" id="profile">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Profile Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Username</label>
+                              <input type="text" class="form-control" name="Username" value="admin123">
+                            </div>
+                            <div class="form-group">
+                              <label>Password</label>
+                              <input type="password" class="form-control" name="Password" value="admin123">
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Change Username</label>
+                              <input type="text" class="form-control" name="Username" placeholder="Enter">
+                            </div>
+                            <div class="form-group">
+                              <label>Change Password</label>
+                              <input type="password" class="form-control" name="Password" placeholder="Enter">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-success">Save Changes</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="billing">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Billing Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- Default box -->
+                    <div class="card">
+                      <div class="card-body">
+                        No Transactions found.
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="log-out">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Log out</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <h4>Are you sure you want to Log out?</h4>
+                        <i class="fas fa-exclamation-triangle fa-3x text-lime"></i>
+                      </div>
+                      <!-- /.card-body -->
+                    </form>
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!--/.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <a href="login.html"><button type="button" class="btn btn-default">Log out</button></a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Page specific script -->
+<script type="text/javascript">
+  var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+  var pieData        = {
+    labels: [
+        'Moving',
+        'Pending',
+        'Cancelled'
+    ],
+    datasets: [
+      {
+        data: [6, 3, 2],
+        backgroundColor : ['#008000', '#ffa500', '#ff0000'],
+      }
+    ]
+  }
+  var pieOptions     = {
+    maintainAspectRatio : false,
+    responsive : true,
+    legend: {
+      position: "right",
+      align: "middle"
+    } 
+  }
+  //Create pie or douhnut chart
+  // You can switch between pie and douhnut using the method below.
+  new Chart(pieChartCanvas, {
+    type: 'pie',
+    data: pieData,
+    options: pieOptions
+  })
+
+  new Chart(document.getElementById("barChartGrade"), {
+      type: 'bar',
+      data: {
+        labels: ["JUN", "JUL", "AUG","SEP","OCT","NOV","DEC"],
+        datasets: [
+          {
+            label: "This Year",
+            data: [1000,2000,3000,2500,2700,2500,3000],
+            backgroundColor: "#D3D3D3",
+            borderWidth: 2
+          },
+
+          {
+            label: "Last Year",
+            data: [700,1700,2700,2000,1800,1500,2000],
+            backgroundColor: "#007bff",
+            borderWidth: 2
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: { 
+          display: true,
+          position: "bottom"
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              max: 3000,
+              min: 0
+            }
+          }]
+        }
+      }
+  });
+</script>
+</body>
+</html>
