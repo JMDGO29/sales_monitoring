@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Monitoring - Accounts</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> -->
+</head>
+
+<body class="hold-transition layout-top-nav dark-mode">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <span class="brand-text font-weight-light">SALES MONITORING</span>
+      </a>
+
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav ml-auto p-2">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="report.html" class="nav-link">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a href="products.html" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="accounts.html" class="nav-link active bg-lime">Accounts</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Settings</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#profile" role="button">Profile</a></li>
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#billing" role="button">Billing</a></li>
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#log-out" role="button">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Accounts</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped projects">
+                  <thead>
+                    <tr>
+                      <th style="width: 8%">ACTION</th>
+                      <th style="width: 8%">PROFILE</th>
+                      <th>ACCOUNT NAME</th>
+                      <th>ACCOUNT EMAIL</th>
+                      <th>CONTACT NUMBER</th>
+                      <th>PASSWORD</th>
+                      <th>ACCOUNT TYPE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border rounded" src="dist/img/064-superman.png">
+                      </td>
+                      <td>Ivan Arbado</td>
+                      <td>ivanarbado@gmail.com</td>
+                      <td>09856702648</td>
+                      <td>******</td>
+                      <td>Admin</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/055-queen.png">
+                      </td>
+                      <td>Pauline Joyce Apostol</td>
+                      <td>paulinejoyceapostol@gmail.com</td>
+                      <td>09775891143</td>
+                      <td>**********</td>
+                      <td>Admin</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/069-thor.png">
+                      </td>
+                      <td>Christian Bulilan</td>
+                      <td>christianbulilan@gmail.com</td>
+                      <td>09143678932</td>
+                      <td>********</td>
+                      <td>Merchant</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/063-batman.png">
+                      </td>
+                      <td>Emil Magante</td>
+                      <td>emilmagante@gmail.com</td>
+                      <td>09664299713</td>
+                      <td>**************</td>
+                      <td>Admin</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/062-ninja.png">
+                      </td>
+                      <td>Genesis Bagacay</td>
+                      <td>genesisbagacay@gmail.com</td>
+                      <td>09438904135</td>
+                      <td>******</td>
+                      <td>Merchant</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/066-Spiderman.png">
+                      </td>
+                      <td>Jeromel Arce</td>
+                      <td>jeromelarce@gmail.com</td>
+                      <td>09345876918</td>
+                      <td>*********</td>
+                      <td>Customer</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/070-deadpool.png">
+                      </td>
+                      <td>Mark Vincent Cadano</td>
+                      <td>markvincentcadano@gmail.com</td>
+                      <td>09779847854</td>
+                      <td>*******</td>
+                      <td>Merchant</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/073-mummy.png">
+                      </td>
+                      <td>Jose Memer Deocareza</td>
+                      <td>josememerdeocareza@gmail.com</td>
+                      <td>09898972342</td>
+                      <td>******</td>
+                      <td>Customer</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/065-wolverine.png">
+                      </td>
+                      <td>Ryan Cayetano</td>
+                      <td>ryancayetano@gmail.com</td>
+                      <td>09456712009</td>
+                      <td>*****</td>
+                      <td>Customer</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editaccount"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <img alt="Avatar" class="table-avatar mx-auto d-block border" src="dist/img/039-cyborg.png">
+                      </td>
+                      <td>John Michael D. Go</td>
+                      <td>johnmichaelgo@gmail.com</td>
+                      <td>09446709811</td>
+                      <td>***********</td>
+                      <td>Editor</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+      </div><!-- /.container-fluid -->
+
+      <div class="modal fade" id="editaccount">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Account Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="card card-default">
+                              <div class="card-body">
+                                <div id="actions" class="row">
+                                  <div class="col-lg-12">
+                                    <div class="btn-group w-100">
+                                      <span class="btn btn-primary col fileinput-button">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Upload Product Image</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="table table-striped files" id="previews">
+                                  <div id="template" class="row mt-2">
+                                    <div class="mx-auto">
+                                        <span class="preview"><img src="dist/img/064-superman.png"alt="shoe" width="327px" height="327px" /></span>
+                                        <span class="preview"><img src="data:," alt="" data-dz-thumbnail/></span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Account Name</label>
+                              <input type="text" class="form-control" name="AccountName" value="Ivan Arbado">
+                            </div>
+                            <div class="form-group">
+                              <label>Account Email</label>
+                              <input type="text" class="form-control" name="AccountEmail" value="ivanarbado@gmail.com">
+                            </div>
+                            <div class="form-group">
+                              <label>Contact Number</label>
+                              <input type="text" class="form-control" name="ContactNumber" value="09856702648">
+                            </div>
+                            <div class="form-group">
+                              <label>Password</label>
+                              <input type="password" class="form-control" name="Password" placeholder="Enter">
+                            </div>
+                            <div class="form-group">
+                              <label>Re-enter Password</label>
+                              <input type="password" class="form-control" name="RePassword" placeholder="Enter">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-success">Save Changes</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="deleteaccount">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Account Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+            <div class="modal-body text-center">
+            <input type="hidden" name="delete_id" id="delete_id">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <h4>Are you sure you want to delete this row?</h4>
+                        <i class="fas fa-exclamation-triangle fa-3x"></i>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      <button type="button" name="deletedata" class="btn btn-default">Delete</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!--/.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="profile">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Profile Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Username</label>
+                              <input type="text" class="form-control" name="Username" value="admin123">
+                            </div>
+                            <div class="form-group">
+                              <label>Password</label>
+                              <input type="password" class="form-control" name="Password" value="admin123">
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Change Username</label>
+                              <input type="text" class="form-control" name="Username" placeholder="Enter">
+                            </div>
+                            <div class="form-group">
+                              <label>Change Password</label>
+                              <input type="password" class="form-control" name="Password" placeholder="Enter">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-success">Save Changes</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="billing">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Billing Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- Default box -->
+                    <div class="card">
+                      <div class="card-body">
+                        No Transactions found.
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="log-out">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Log out</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <h4>Are you sure you want to Log out?</h4>
+                        <i class="fas fa-exclamation-triangle fa-3x text-lime"></i>
+                      </div>
+                      <!-- /.card-body -->
+                    </form>
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!--/.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <a href="login.html"><button type="button" class="btn btn-default">Log out</button></a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!--
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+-->
+<!-- dropzonejs -->
+<script src="plugins/dropzone/min/dropzone.min.js"></script>
+<!-- Page specific script -->
+<script>
+  // DropzoneJS Demo Code Start
+  Dropzone.autoDiscover = false
+
+  var previewNode = document.querySelector("#template")
+  previewNode.id = ""
+  var previewTemplate = previewNode.parentNode.innerHTML
+  // previewNode.parentNode.removeChild(previewNode)
+
+  var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
+    url: "/target-url", // Set the url
+    thumbnailWidth: 330,
+    thumbnailHeight: 330,
+    parallelUploads: 20,
+    previewTemplate: previewTemplate,
+    autoQueue: false, // Make sure the files aren't queued until manually added
+    previewsContainer: "#previews", // Define the container to display the previews
+    clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
+  })
+</script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
+</body>
+</html>

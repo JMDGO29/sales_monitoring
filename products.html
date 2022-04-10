@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Monitoring - Products</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- dropzonejs -->
+  <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
+</head>
+
+<body class="hold-transition layout-top-nav dark-mode">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <span class="brand-text font-weight-light">SALES MONITORING</span>
+      </a>
+
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav ml-auto p-2">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="report.html" class="nav-link">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a href="products.html" class="nav-link active bg-lime">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="accounts.html" class="nav-link">Accounts</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Settings</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#profile" role="button">Profile</a></li>
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#billing" role="button">Billing</a></li>
+              <li><a class="dropdown-item" data-toggle="modal" data-target="#log-out" role="button">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Products</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-header">
+            <a class="btn btn-sm btn-primary elevation-2" href="#" data-toggle="modal" data-target="#addcategory"><i class="fa fa-plus-square"></i> Add New Category</a>
+            <a class="btn btn-sm btn-success elevation-2" href="#" data-toggle="modal" data-target="#editcategory" style="margin-left: 7px;"><i class="fa fa-edit"></i> Edit Category</a>
+            <a class="btn btn-sm btn-warning elevation-2 float-right" href="#" data-toggle="modal" data-target="#addproduct"><i class="fa fa-plus-square"></i> Add Product</a>
+          </div>
+          <div class="card-body">
+            <h4>Product Category</h4>
+            <div class="row">
+              <div class="col-5 col-sm-3">
+                <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link active text-warning" id="vert-tabs-category1-tab" data-toggle="pill" href="#vert-tabs-category1" role="tab" aria-controls="vert-tabs-category1" aria-selected="true">Product Category 1</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category2-tab" data-toggle="pill" href="#vert-tabs-category2" role="tab" aria-controls="vert-tabs-category2" aria-selected="false">Product Category 2</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category3-tab" data-toggle="pill" href="#vert-tabs-category3" role="tab" aria-controls="vert-tabs-category3" aria-selected="false">Product Category 3</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category4-tab" data-toggle="pill" href="#vert-tabs-category4" role="tab" aria-controls="vert-tabs-category4" aria-selected="false">Product Category 4</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category5-tab" data-toggle="pill" href="#vert-tabs-category5" role="tab" aria-controls="vert-tabs-category5" aria-selected="false">Product Category 5</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category6-tab" data-toggle="pill" href="#vert-tabs-category6" role="tab" aria-controls="vert-tabs-category6" aria-selected="false">Product Category 6</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category7-tab" data-toggle="pill" href="#vert-tabs-category7" role="tab" aria-controls="vert-tabs-category7" aria-selected="false">Product Category 7</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category8-tab" data-toggle="pill" href="#vert-tabs-category8" role="tab" aria-controls="vert-tabs-category8" aria-selected="false">Product Category 8</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category9-tab" data-toggle="pill" href="#vert-tabs-category9" role="tab" aria-controls="vert-tabs-category9" aria-selected="false">Product Category 9</a>
+                  <a class="nav-link text-warning" id="vert-tabs-category10-tab" data-toggle="pill" href="#vert-tabs-category10" role="tab" aria-controls="vert-tabs-category10" aria-selected="false">Product Category 10</a>
+                </div>
+              </div>
+              <div class="col-7 col-sm-9">
+                <div class="tab-content" id="vert-tabs-tabContent">
+                  <div class="tab-pane text-left fade show active" id="vert-tabs-category1" role="tabpanel" aria-labelledby="vert-tabs-category1-tab">
+                  	<div class="card-body table-responsive p-0" style="height: 400px;">
+											<table class="table table-head-fixed table-bordered text-nowrap">
+												<thead>
+												  <tr>
+												    <th>ACTION</th>
+												    <th>PRODUCT NAME</th>
+												    <th>UNIT SOLD</th>
+												    <th>IN STOCK</th>
+												    <th>EXPIRE DATE</th>
+												  </tr>
+												</thead>
+												<tbody>
+												  <tr>
+												  	<td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>LOWA Men’s Renegade GTX Mid Hiking Boots</td>
+												    <td>1,450</td>
+												    <td>550</td>
+												    <td>28 March 2019</td>
+												  </tr>
+												  <tr>
+												  	<td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 2</td>
+												    <td>1,250</td>
+												    <td>750</td>
+												    <td>21 March 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 3</td>
+												    <td>1,100</td>
+												    <td>900</td>
+												    <td>18 Feb 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 4</td>
+												    <td>1,400</td>
+												    <td>600</td>
+												    <td>24 Feb 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 5</td>
+												    <td>1,800</td>
+												    <td>200</td>
+												    <td>22 Feb 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 6</td>
+												    <td>1,000</td>
+												    <td>1,000</td>
+												    <td>20 Feb 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 7</td>
+												    <td>500</td>
+												    <td>100</td>
+												    <td>10 Feb 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 8</td>
+												    <td>1,000</td>
+												    <td>600</td>
+												    <td>08 Feb 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 9</td>
+												    <td>1,200</td>
+												    <td>800</td>
+												    <td>24 Jan 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 10</td>
+												    <td>1,600</td>
+												    <td>400</td>
+												    <td>22 Jan 2019</td>
+												  </tr>
+												  <tr>
+												    <td>
+                              <a class="btn btn-sm btn-success edit" href="#" data-toggle="modal" data-target="#editproduct"><i class="fa fa-edit"></i></a>
+                              <a class="btn btn-sm btn-danger delete" href="#" data-toggle="modal" data-target="#deleteproduct"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+												    <td>Lorem Ipsum Product 11</td>
+												    <td>2,000</td>
+												    <td>400</td>
+												    <td>21 Jan 2019</td>
+												  </tr>
+												</tbody>
+											</table>
+										</div>
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category2" role="tabpanel" aria-labelledby="vert-tabs-category2-tab">
+                     CATEGORY 2
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category3" role="tabpanel" aria-labelledby="vert-tabs-category3-tab">
+                     CATEGORY 3
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category4" role="tabpanel" aria-labelledby="vert-tabs-category4-tab">
+                     CATEGORY 4
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category5" role="tabpanel" aria-labelledby="vert-tabs-category5-tab">
+                     CATEGORY 5
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category6" role="tabpanel" aria-labelledby="vert-tabs-category6-tab">
+                     CATEGORY 6
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category7" role="tabpanel" aria-labelledby="vert-tabs-category7-tab">
+                     CATEGORY 7
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category8" role="tabpanel" aria-labelledby="vert-tabs-category8-tab">
+                     CATEGORY 8
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category9" role="tabpanel" aria-labelledby="vert-tabs-category9-tab">
+                     CATEGORY 9
+                  </div>
+                  <div class="tab-pane fade" id="vert-tabs-category10" role="tabpanel" aria-labelledby="vert-tabs-category10-tab">
+                     CATEGORY 10
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.card -->
+      </div><!-- /.container-fluid -->
+
+      <div class="modal fade" id="addcategory">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Product Category Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Product Category Name</label>
+                              <input type="text" class="form-control" name="Categoryname" placeholder="Enter">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-primary">Add</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="editcategory">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Product Category Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Product Category</label>
+                              <select class="form-control" name="Category_name">
+                                <option>Select Product Category</option>
+                                <option>Product Category 1</option>
+                                <option>Product Category 2</option>
+                                <option>Product Category 3</option>
+                                <option>Product Category 4</option>
+                                <option>Product Category 5</option>
+                                <option>Product Category 6</option>
+                                <option>Product Category 7</option>
+                                <option>Product Category 8</option>
+                                <option>Product Category 9</option>
+                                <option>Product Category 10</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>New Product Category Name</label>
+                              <input type="text" class="form-control" name="Categoryname" placeholder="Enter">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-success">Save Changes</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="addproduct">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Product Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Product Name</label>
+                              <input type="text" class="form-control" name="Categoryname" placeholder="Enter">
+                            </div>
+                            <div class="form-group">
+                              <label>Description</label>
+                              <textarea class="form-control" rows="3" placeholder="Enter"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label>Product Category</label>
+                              <select class="form-control" name="Category_name">
+                                <option>Select Product Category</option>
+                                <option>Product Category 1</option>
+                                <option>Product Category 2</option>
+                                <option>Product Category 3</option>
+                                <option>Product Category 4</option>
+                                <option>Product Category 5</option>
+                                <option>Product Category 6</option>
+                                <option>Product Category 7</option>
+                                <option>Product Category 8</option>
+                                <option>Product Category 9</option>
+                                <option>Product Category 10</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label>Units in Stock</label>
+                              <input type="text" class="form-control" name="InStock" placeholder="Enter">
+                            </div>
+                            <div class="form-group">
+                              <label>Expire Date</label>
+                              <input type="date" class="form-control" name="ExpireDate" placeholder="Enter">
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="card card-default">
+                              <div class="card-body">
+                                <div id="actions" class="row">
+                                  <div class="col-lg-12">
+                                    <div class="btn-group w-100">
+                                      <span class="btn btn-primary col fileinput-button">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Upload Product Image</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="table table-striped files" id="previews">
+                                  <div id="template" class="row mt-2">
+                                    <div class="mx-auto">
+                                        <span class="preview"><img src="data:," alt="" data-dz-thumbnail/></span>
+                                    </div>
+                                    <div class="col-auto mx-auto mt-2 mb-0">
+                                      <div class="btn-group">
+                                        <button data-dz-remove class="btn btn-warning cancel">
+                                          <i class="fas fa-times-circle"></i>
+                                          <span>Cancel</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-primary">Add</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="editproduct">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Product Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Product Name</label>
+                              <input type="text" class="form-control" name="Categoryname" value="LOWA Men’s Renegade GTX Mid Hiking Boots">
+                            </div>
+                            <div class="form-group">
+                              <label>Description</label>
+                              <textarea class="form-control" rows="3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
+                            </div>
+                            <div class="form-group">
+                              <label>Product Category</label>
+                              <select class="form-control" name="Category_name">
+                                <option>Select Product Category</option>
+                                <option selected>Shoes</option>
+                                <option>Product Category 2</option>
+                                <option>Product Category 3</option>
+                                <option>Product Category 4</option>
+                                <option>Product Category 5</option>
+                                <option>Product Category 6</option>
+                                <option>Product Category 7</option>
+                                <option>Product Category 8</option>
+                                <option>Product Category 9</option>
+                                <option>Product Category 10</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label>Unit Sold</label>
+                              <input type="text" class="form-control" name="UnitSold" value="1450">
+                            </div>
+                            <div class="form-group">
+                              <label>Units in Stock</label>
+                              <input type="text" class="form-control" name="InStock" value="550">
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="card card-default">
+                              <div class="card-body">
+                                <div id="actions" class="row">
+                                  <div class="col-lg-12">
+                                    <div class="btn-group w-100">
+                                      <span class="btn btn-primary col fileinput-button">
+                                        <i class="fas fa-plus"></i>
+                                        <span>Upload Product Image</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="table table-striped files" id="previews">
+                                  <div id="template" class="row mt-2">
+                                    <div class="mx-auto">
+                                        <span class="preview"><img src="dist/img/prod-1.jpg" alt="shoe" width="330px" height="330px" /></span>
+                                    </div>
+                                    <div class="col-auto mx-auto mt-2 mb-0">
+                                      <div class="btn-group">
+                                        <button data-dz-remove class="btn btn-warning cancel">
+                                          <i class="fas fa-times-circle"></i>
+                                          <span>Cancel</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-primary">Add</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="deleteproduct">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Product Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+            <div class="modal-body text-center">
+            <input type="hidden" name="delete_id" id="delete_id">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <h4>Are you sure you want to delete this row?</h4>
+                        <i class="fas fa-exclamation-triangle fa-3x"></i>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      <button type="button" name="deletedata" class="btn btn-default">Delete</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!--/.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="profile">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Profile Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card card-primary">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Username</label>
+                              <input type="text" class="form-control" name="Username" value="admin123">
+                            </div>
+                            <div class="form-group">
+                              <label>Password</label>
+                              <input type="password" class="form-control" name="Password" value="admin123">
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Change Username</label>
+                              <input type="text" class="form-control" name="Username" placeholder="Enter">
+                            </div>
+                            <div class="form-group">
+                              <label>Change Password</label>
+                              <input type="password" class="form-control" name="Password" placeholder="Enter">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="insertdata" class="btn btn-success">Save Changes</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="billing">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Billing Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- Default box -->
+                    <div class="card">
+                      <div class="card-body">
+                        No Transactions found.
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!--/.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      <div class="modal fade" id="log-out">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Log out</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <h4>Are you sure you want to Log out?</h4>
+                        <i class="fas fa-exclamation-triangle fa-3x text-lime"></i>
+                      </div>
+                      <!-- /.card-body -->
+                    </form>
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!--/.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <a href="login.html"><button type="button" class="btn btn-default">Log out</button></a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- dropzonejs -->
+<script src="plugins/dropzone/min/dropzone.min.js"></script>
+<!-- Page specific script -->
+<script>
+  // DropzoneJS Demo Code Start
+  Dropzone.autoDiscover = false
+
+  var previewNode = document.querySelector("#template")
+  previewNode.id = ""
+  var previewTemplate = previewNode.parentNode.innerHTML
+  previewNode.parentNode.removeChild(previewNode)
+
+  var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
+    url: "/target-url", // Set the url
+    thumbnailWidth: 330,
+    thumbnailHeight: 330,
+    parallelUploads: 20,
+    previewTemplate: previewTemplate,
+    autoQueue: false, // Make sure the files aren't queued until manually added
+    previewsContainer: "#previews", // Define the container to display the previews
+    clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
+  })
+</script>
+</body>
+</html>
